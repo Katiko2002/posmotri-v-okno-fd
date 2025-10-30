@@ -8,6 +8,14 @@ html {
   block-size: 100%;
 }
 
+/* Заметила, что в описании города в МАКЕТЕ 
+где-то текст начинается с большой буквы, а где-то с маленькой,
+(не считая описаний, которые начинаются с названия города, которые
+всегда пишутся с большой),
+но не знала, можно ли в рамках проекта считать это за ошибку дизанера,
+поэтому оставила все соответственно макету,
+в реале бы уточнила у дизайнера */
+
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -34,7 +42,7 @@ html {
 
 .result__video-container {
   min-width: 711px;
-  min-height: 396px;
+  min-height: 386px;
   margin-bottom: 16px;
 }
 
@@ -56,6 +64,9 @@ html {
 }
 
 .search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .search-form__label {
@@ -79,9 +90,15 @@ html {
 
 .title {
   margin-bottom: 25px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
 }
 
 .content__accent {
+  opacity: 0.2;
 }
 
 .content__list-container {
@@ -137,6 +154,8 @@ ol {
 }
 
 .content__card-link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .content__video-card {
@@ -149,9 +168,25 @@ ol {
 }
 
 .content__video-card-title {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  max-width: 196px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .content__video-card-description {
+  /* Я хз, как тут с line-clamp сделать */
+  width: 196px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content__video-card-thumbnail {
@@ -165,7 +200,6 @@ ol {
 }
 
 .button {
-  
 }
 
 .more-button {
