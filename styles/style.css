@@ -75,8 +75,15 @@ html {
   display: flex;
   align-items: center;
   width: fit-content;
-  height: 20px;
   gap: 5px;
+ 
+  
+}
+
+.search-form__label:has(.search-form__textfield) {
+
+   border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
@@ -85,12 +92,14 @@ html {
 
 .search-form__label:has(:focus-visible):has(.search-form__pseudo-checkbox) {
   outline: 1px solid #fff;
-  outline-offset: 1px;
+    outline-offset: 1px;
+
 }
 
 .search-form__label:has(:focus-visible):has(.search-form__textfield) {
   outline: 1px solid #fff;
-  outline-offset: 5px;
+  outline-offset: 1px;
+  
 }
 
 .search-form__label-text {
@@ -111,14 +120,14 @@ html {
   background-color: inherit;
   height: 27px;
   width: 225px;
+  outline: 1px solid #fff;
   border: none;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
   outline: none;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   font-family: "Fira Sans Condensed", sans-serif;
+  color: white;
 }
 
 .search-form__textfield::placeholder {
@@ -130,6 +139,7 @@ html {
   display: flex;
   gap: 15px;
   width: 212px;
+  height: 20px;
 }
 
 .search-form__checkbox {
