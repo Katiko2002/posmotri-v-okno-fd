@@ -41,9 +41,6 @@ html {
   gap: 30px;
 }
 
-.result {
-}
-
 .result__video-container {
   width: 711px;
   height: 386px;
@@ -107,9 +104,6 @@ html {
   outline-offset: 1px;
 }
 
-.search-form__label-text {
-}
-
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -142,9 +136,6 @@ html {
   gap: 16px;
   width: 212px;
   height: 20px;
-}
-
-.search-form__checkbox {
 }
 
 .search-form__checkbox[type="checkbox"]:checked + span::after {
@@ -278,14 +269,6 @@ ol {
   background-color: #d9d9d9;
 }
 
-/* еще темплейты */
-
-.cards-list-item-template {
-}
-
-.content__list-item {
-}
-
 .content__card-link {
   text-decoration: none;
   color: #fff;
@@ -348,9 +331,6 @@ ol {
   height: 103px;
   object-fit: cover;
   object-position: center;
-}
-
-.more-button-template {
 }
 
 .more-button {
