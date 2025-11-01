@@ -44,6 +44,7 @@ html {
   min-width: 711px;
   min-height: 386px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .result__video {
@@ -51,6 +52,7 @@ html {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  cursor: pointer;
 }
 
 .search-form {
@@ -76,8 +78,7 @@ html {
   align-items: center;
   width: fit-content;
   gap: 5px;
- 
-  
+  cursor: pointer;
 }
 
 .search-form__label:has(.search-form__textfield) {
@@ -176,6 +177,7 @@ html {
   line-height: 22px;
   text-align: center;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .button :focus {
@@ -223,8 +225,10 @@ html {
 .content__list-container {
   height: 298px;
   overflow-y: scroll;
+  overflow-x: hidden;
   display: grid;
   gap: 30px;
+  position: relative;
 }
 
 .content__list {
@@ -275,11 +279,30 @@ ol {
 .content__card-link {
   text-decoration: none;
   color: #fff;
+  display: block;
 }
+
+.content__card-link:hover {
+  text-decoration: underline solid 1px #fff;
+  text-underline-offset: 4px;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.content__card-link:focus-visible {
+  outline: none;
+ border: 1px solid #fff;
+}
+
+
 
 .content__video-card {
   display: flex;
   align-items: flex-start;
+  cursor: pointer;
 }
 
 .content__video-card-description-container {
@@ -287,6 +310,7 @@ ol {
 }
 
 .content__video-card-title {
+  height: 36px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
@@ -321,3 +345,4 @@ ol {
 .more-button {
   width: 100%;
 }
+
