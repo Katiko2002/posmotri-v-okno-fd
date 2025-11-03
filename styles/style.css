@@ -8,16 +8,24 @@ html {
   block-size: 100%;
 }
 
-/* Заметила, что в описании города в МАКЕТЕ 
-где-то текст начинается с большой буквы, а где-то с маленькой,
-(не считая описаний, которые начинаются с названия города, которые
-всегда пишутся с большой),
-но не знала, можно ли в рамках проекта считать это за ошибку дизанера,
-поэтому оставила все соответственно макету,
-в реале бы уточнила у дизайнера */
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
 
-/* Увидела, что в макете написано "Ночной Белогород", а у меня в html почему-то "Ночной Белгород",
-Не поняла, как исправить, подумала, что это тоже не важно */
+ul,
+ol {
+  list-style: none;
+}
 
 .page {
   inline-size: 1200px;
@@ -28,6 +36,8 @@ html {
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
@@ -35,9 +45,7 @@ html {
   align-self: center;
   display: flex;
   align-items: flex-end;
-  flex-direction: row;
   width: 1140px;
-  height: 534px;
   gap: 30px;
 }
 
@@ -58,7 +66,6 @@ html {
 
 .search-form {
   width: 711px;
-  height: 54px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -73,7 +80,7 @@ html {
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2;
   margin-bottom: 6px;
 }
 
@@ -85,21 +92,12 @@ html {
   cursor: pointer;
 }
 
-.search-form__label:has(.search-form__textfield) {
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-}
-
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
   text-decoration: underline solid #fff 1px;
+  text-underline-offset: 2px;
 }
 
-.search-form__label:has(:focus-visible):has(.search-form__pseudo-checkbox) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__label:has(:focus-visible):has(.search-form__textfield) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
@@ -115,27 +113,28 @@ html {
 }
 
 .search-form__textfield {
+  outline: none;
   appearance: none;
   background-color: inherit;
-  height: 27px;
   width: 225px;
   border: none;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2;
   font-weight: 400;
   color: white;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
-  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__checkbox-list {
   display: flex;
   gap: 16px;
   width: 212px;
-  height: 20px;
 }
 
 .search-form__checkbox[type="checkbox"]:checked + span::after {
@@ -160,58 +159,58 @@ html {
 }
 
 .button {
-  height: 34px;
-  box-sizing: content-box;
   border: 1px solid #fff;
   background-color: inherit;
   font-size: 18px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 1.2;
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+  height: 34px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  text-align: center;
 }
 
 .button :focus {
   outline: none;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
 }
 
-.search-form__submit-button {
-  width: 180px;
-  height: 30px;
-  align-self: flex-end;
-  outline: none;
-font-family: 'Fira Sans Condensed', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 22px;
-text-align: center;
-
-}
-
-.search-form__submit-button:focus-visible {
+.button:focus-visible {
   outline: 1px double #fff;
   outline-offset: 1px;
 }
 
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline solid #fff 1px;
+  text-underline-offset: 2px;
 }
 
-.search-form__submit-button:active {
+.button:active {
   text-decoration: none;
   background-color: #545050;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end;
 }
 
 .content__details {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-  margin-bottom: 22px;
-  padding-top: 2px;
+  margin-bottom: 19px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 75px;
@@ -220,13 +219,13 @@ text-align: center;
 }
 
 .content__accent {
-  opacity: 0.2;
+  color: #545050;
 }
 
+/* Где остановились */
 .content__list-container {
   height: 298px;
   overflow-y: scroll;
-  overflow-x: hidden;
   display: grid;
   gap: 30px;
   position: relative;
@@ -235,25 +234,6 @@ text-align: center;
 .content__list {
   display: grid;
   gap: 30px;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
 }
 
 /* Кастомный скроллбар */
@@ -276,7 +256,7 @@ ol {
 }
 
 .content__card-link:hover {
-  text-decoration: underline solid 1px #fff;
+  text-decoration: underline solid #fff;
   text-underline-offset: 4px;
 }
 
@@ -288,6 +268,10 @@ ol {
 .content__card-link:focus-visible {
   outline: none;
   border: 1px solid #fff;
+}
+
+.content__card-link_current {
+    background-color: #545050;
 }
 
 .content__video-card {
@@ -302,12 +286,12 @@ ol {
 }
 
 .content__video-card-title {
+  padding-bottom: 7px;
+  line-height: 100%;
   padding-left: 3px;
-  height: 32px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 100%;
   text-transform: uppercase;
   max-width: 196px;
   overflow: hidden;
@@ -316,6 +300,8 @@ ol {
 }
 
 .content__video-card-description {
+  padding-bottom: 5px;
+  line-height: 0.9;
   padding-left: 2px;
   width: 196px;
   display: -webkit-box;
