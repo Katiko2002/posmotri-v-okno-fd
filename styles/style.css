@@ -183,12 +183,6 @@ ol {
 
 .button :focus {
   outline: none;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.2;
-  text-align: center;
 }
 
 .button:focus-visible {
